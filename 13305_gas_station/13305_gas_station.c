@@ -1,5 +1,5 @@
-/* https://www.acmicpc.net/problem/1541 */
-/* 1541 - 잃어버린 괄호 */
+/* https://www.acmicpc.net/problem/13305 */
+/* 13305 - 주유소 */
 #include <stdio.h>
 #include <stdlib.h>
 

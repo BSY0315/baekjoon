@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/11399
+# 11399 - ATM
 count = int(input())
 time_list = list(map(int, input().split()))
 time_list.sort()

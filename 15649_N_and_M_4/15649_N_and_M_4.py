@@ -1,6 +1,7 @@
+# https://www.acmicpc.net/problem/15652
+# 15652 - N 과 M 4
 N, M = map(int, input().split())
 list = [0 for _ in range(0, M + 1)]
-isVisit = [False for _ in range(0, N + 1)]
 
 
 def recursive(depth):
@@ -8,11 +9,9 @@ def recursive(depth):
         print(*list[:-1], sep=" ")
         return
     for i in range(1, N + 1):
-        if not isVisit[i] and list[depth - 1] < i:
-            isVisit[i] = True
+        if i >= list[depth - 1]:
             list[depth] = i
             recursive(depth + 1)
-            isVisit[i] = False
 
 
 recursive(0)
