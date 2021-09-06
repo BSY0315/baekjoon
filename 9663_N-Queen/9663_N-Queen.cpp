@@ -1,3 +1,5 @@
+/* https://www.acmicpc.net/problem/9663
+9663번 - N-Queen*/
 #include <iostream>
 
 #define MAX (15)

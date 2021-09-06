@@ -3,35 +3,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define character_to_integer(CHAR) (CHAR - '0')
+#define character_to_integer(CHAR) ((int)CHAR - '0')
+#define MAX_LENGTH (500001)
+
+typedef long long int lld;
+
+char string[MAX_LENGTH];
+char intergerAsString[MAX_LENGTH] = {"0"};
 
 int main(void)
 {
     int length;
     scanf("%d", &length);
-    char *string = malloc(sizeof(char) * (length + 1));
-    size_t *answerList = malloc(sizeof(size_t) * (length + 1));
     scanf("%s", string);
 
-    answerList[0] = character_to_integer(string[0]);
-    for (int i = 1; i < length; i++)
+    lld answer = 0;
+    int index = 1;
+    for (int i = 0; i < length; i++)
     {
         if (string[i] != '-')
         {
-            answerList[i] = answerList[i - 1] * 10 +
-                            character_to_integer(string[i]);
+            intergerAsString[index] = string[i];
+            intergerAsString[index + 1] = '\0';
+            index++;
         }
         else
         {
-            answerList[i] = answerList[i - 1] / 10;
+            index--;
+            intergerAsString[index] = '\0';
         }
+        answer += atoi(intergerAsString);
     }
-
-    size_t answer = 0;
-    for (int i = 0; i < length; i++)
-    {
-        answer += answerList[i];
-    }
-    printf("%d", answer);
+    printf("%lld", answer);
     return 0;
 }
