@@ -5,6 +5,7 @@
   "python.pythonPath": "C:\\Users\\1889s\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
   "files.associations": {
     "iostream": "cpp",
-    "memory": "cpp"
+    "memory": "cpp",
+    "array": "cpp"
   }
 }
