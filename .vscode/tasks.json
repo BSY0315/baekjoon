@@ -6,13 +6,6 @@
   "presentation": {
     "reveal": "always"
   },
-  "windows": {
-    "options": {
-      "shell": {
-        "executable": "powershell.exe"
-      }
-    }
-  },
   "tasks": [
     {
       "label": "save and compile for C++",
@@ -77,9 +70,10 @@
     },
     {
       "label": "execute",
-      "command": "powershell",
+      "type": "shell",
+      "command": "zsh",
       "group": "build",
-      "args": ["/C", "${fileDirname}\\${fileBasenameNoExtension}"]
+      "args": ["-c", "${fileDirname}/${fileBasenameNoExtension}"]
     }
   ]
 }
