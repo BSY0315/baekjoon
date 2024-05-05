@@ -1,4 +1,4 @@
-# https://www.acmicpc.net/problem/11659
+# https://www.acmicpc.net/problem/11589
 
 N, M = map(int, input().split())
 lists = list(map(int, input().split()))
