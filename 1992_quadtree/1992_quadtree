@@ -1,0 +1,42 @@
+
+# https://www.acmicpc.net/problem/1992
+
+def divide(video, N):
+    global zero
+    global one
+
+    if (N == 1):
+        print(video[0][0], end="")
+        return
+
+    is_zero = True
+    is_one = True
+
+    for i in range(N):
+        for j in range(N):
+            if (video[i][j] != 1):
+                is_one = False
+            else:
+                is_zero = False
+
+    if (is_zero):
+        print("0", end="")
+        return
+    if (is_one):
+        print("1", end="")
+        return
+
+    print("(", end="")
+    divide([row[0:N//2] for row in video[0:N//2]], N//2)
+    divide([row[N//2:N] for row in video[0:N//2]], N//2)
+    divide([row[0:N//2] for row in video[N//2:N]], N//2)
+    divide([row[N//2:N] for row in video[N//2:N]], N//2)
+    print(")", end="")
+
+
+n = int(input())
+video = [[] for _ in range(n)]
+for i in range(n):
+    video[i] = list(map(int, input()))
+
+divide(video, n)
